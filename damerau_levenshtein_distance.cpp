@@ -7,7 +7,6 @@
 
 #include "damerau_levenshtein_distance.hpp"
 #include <vector>
-#include <iostream>
 
 DamLevDist::DamLevDist(
                        costType insertCost, costType deleteCost,
