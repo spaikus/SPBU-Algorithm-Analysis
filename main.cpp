@@ -10,7 +10,8 @@
 #include <filesystem>
 #include "tests.hpp"
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char * argv[]) 
+{
     const size_t from = 400;
     const size_t to = 2000;
     const size_t step = 200;
@@ -41,8 +42,10 @@ int main(int argc, const char * argv[]) {
     //idle run
     Test::averageTestExecutionTime(damLevDist, Test::getRandomString(-1), Test::getRandomString(-1));
 
-    for (size_t N = from; N <= to; N += step) {
-        for (size_t M = from; M <= to; M += step) {
+    for (size_t N = from; N <= to; N += step) 
+    {
+        for (size_t M = from; M <= to; M += step) 
+        {
             size_t testSize = N * M;
 
             worstCasesFile << testSize << ' ';
@@ -55,7 +58,8 @@ int main(int argc, const char * argv[]) {
             bestCasesFile << Test::averageCaseExecutionTime(Test::bestCaseExecutionTime,
                                                              damLevDist, N, M) << '\n';
 
-            for (int i = 0; i < randTestsNum; ++i) {
+            for (int i = 0; i < randTestsNum; ++i) 
+            {
                 std::string a = Test::getRandomString(N);
                 std::string b = Test::getRandomString(M);
 
@@ -72,6 +76,7 @@ int main(int argc, const char * argv[]) {
 
     bestCasesFile.close();
     worstCasesFile.close();
+    randTestsFile.close();
 
     return 0;
 }
